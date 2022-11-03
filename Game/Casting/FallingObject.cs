@@ -5,22 +5,32 @@
 
 
 
-using System;
+
 
 namespace Unit04.Game.Casting;
 
-public class fallingObject : Activator{
+public class fallingObject : Actor
 
-    {
-        public FallingObjects
+{
+        private int points = 1;
+
         
-        private int points();
+        public Rock()
+        {
+        }
 
-        public int getPoint
+        
+        public int GetPoints()
+        {
+            return points;
+        }
 
-    }
-    {
-        return points;
+        
+        public int SetScore(int total)
+        {
+            total -= points;
+            return total;
+        }
     }
 }
 
