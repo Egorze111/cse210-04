@@ -85,23 +85,27 @@ namespace cse210_04.Game.Directing
 
             foreach (FallingObject actor in fallingobjects)
             {
-                if (minecart.GetPosition().Equals(actor.GetPosition()))
+                if (minecart.GetPosition().GetX() == (actor.GetPosition().GetX()))
                 {
-                    /// If player is in object position then 
-                    /// call on Score Tracker UpdateScore()
-                    scoretracker.UpdateMultiplier(actor.getMultiplier());
-                    scoretracker.UpdateScore(actor.getPointValue());
+                    if(minecart.GetPosition().GetY() >= actor.GetPosition().GetY())
+                    {
+                        /// If player is in object position then 
+                        /// call on Score Tracker UpdateScore()
+                        scoretracker.UpdateMultiplier(actor.getMultiplier());
+                        scoretracker.UpdateScore(actor.getPointValue());
 
-                    string multiplierMessage = $"Multiplier: {scoretracker.GetMultiplier()}x";
-                    multiplierBanner.SetText(multiplierMessage);
-                    string scoreMessage = $"Score: {scoretracker.GetScore()}";
-                    scoreBanner.SetText(scoreMessage);
-                    cast.RemoveActor("fallingObjects", actor);
+                        string multiplierMessage = $"Multiplier: {scoretracker.GetMultiplier()}x";
+                        multiplierBanner.SetText(multiplierMessage);
+                        string scoreMessage = $"Score: {scoretracker.GetScore()}";
+                        scoreBanner.SetText(scoreMessage);
+                        cast.RemoveActor("fallingObjects", actor);
+                    }
                 }
-                if (actor.GetPosition().GetY().Equals(600))
+                if (actor.GetPosition().GetY() > (200)) 
                 {
                     cast.RemoveActor("fallingObjects", actor);
                 }
+                actor.MoveNext(maxX, maxY);
             } 
         }
 
@@ -121,21 +125,20 @@ namespace cse210_04.Game.Directing
 
         private void spawnFallingObjects(Cast cast)
         {
-            List<int> xList = new List<int>();
-            for(int i = 0; i < 3; i++)
+            // List<int> xList = new List<int>();
+            // for(int i = 0; i < 3; i++)
             {
                 Random rnd = new Random();
-                // no access to the random library
-                int x = rnd.Next(1, COLS);
-                if (!xList.Contains(x))
+                int x = rnd.Next(1, _videoService.GetWidth());
+                // if (!xList.Contains(x))
                 {
-                    int y = _videoService.GetHeight();
+                    //int y = _videoService.GetHeight();
+                    int y = 0;
                     Point position = new Point(x, y);
-                    position = position.Scale(_videoService.GetCellSize());
-                // no access to the random library
+//                    position = position.Scale(_videoService.GetCellSize());
                     int objectType = rnd.Next(1, 10);
                     objectFactory.defineobject(objectType, position, cast);
-                    xList.Add(x);
+                  //  xList.Add(x);
                 }
             }  
         }

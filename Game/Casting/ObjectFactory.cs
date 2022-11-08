@@ -12,25 +12,25 @@ namespace cse210_04.Game.Casting;
         private int r;
         private int g;
         private int b;
-        private int FONT_SIZE = 3;
+        private int FONT_SIZE = 15;
         Color color = new Color(0,0,0);
-        private string gemShape = (
-                @" __
-                /||\
-                \||/
-                    \/").ToString();
-        private string rockShape = (
-                @"_
-            /-\
-                \_/").ToString(); //makes the rock's shape
+        private string gemShape = ("g");
+                // @" __
+                // /||\
+                // \||/
+                //     \/").ToString();
+        private string rockShape = ("r");
+            //     @"_
+            // /-\
+            //     \_/").ToString(); //makes the rock's shape
 
 
            
-        private string multiplierGemShape = (
-            @"    /\
-        /__\
-        \__/
-            \/").ToString(); // the multiplier gem shape
+        private string multiplierGemShape = ("m");
+        //     @"    /\
+        // /__\
+        // \__/
+        //     \/").ToString(); // the multiplier gem shape
 
         public void defineobject(int type, Point Position, Cast cast)
         {
@@ -44,7 +44,7 @@ namespace cse210_04.Game.Casting;
                 g = 166;
                 b = 24;
                 color = new Color(r, g, b);
-                fallingspeed = new Point(0, 10);
+                fallingspeed = new Point(0, 5);
                 score = -250;
                 multiplier = -1;
  
@@ -58,7 +58,7 @@ namespace cse210_04.Game.Casting;
                 g = 146;
                 b = 4;
                 color = new Color(r, g, b);
-                fallingspeed = new Point(0, 10);
+                fallingspeed = new Point(0, 5);
                 score = -100;
                 multiplier = -1;
             break;
@@ -71,7 +71,7 @@ namespace cse210_04.Game.Casting;
                 g = 166;
                 b = 24;
                 color = new Color(r, g, b);
-                fallingspeed = new Point(0, 10);
+                fallingspeed = new Point(0, 5);
                 score = -500;
                 multiplier = -1;
             break;
@@ -83,7 +83,7 @@ namespace cse210_04.Game.Casting;
                 g = 166;
                 b = 24;
                 color = new Color(r, g, b);
-                fallingspeed = new Point(0, 10);
+                fallingspeed = new Point(0, 5);
                 score = -1000;
                 multiplier = -1;
  
@@ -95,7 +95,7 @@ namespace cse210_04.Game.Casting;
                 g = 255;
                 b = 150;
                 color = new Color(r, g, b);
-                fallingspeed = new Point(0, 10);
+                fallingspeed = new Point(0, 5);
                 score = -10000;
                 multiplier = -1;
  
@@ -109,7 +109,7 @@ namespace cse210_04.Game.Casting;
                 g = 197;
                 b = 236;
                 color = new Color(r, g, b);
-                fallingspeed = new Point(0, 2);
+                fallingspeed = new Point(0, 1);
                 score = 100;
                 multiplier = 0;
                 
@@ -122,7 +122,7 @@ namespace cse210_04.Game.Casting;
                 g = 0;
                 b = 236;
                 color = new Color(r, g, b);
-                fallingspeed = new Point(0, 3);
+                fallingspeed = new Point(0, 2);
                 score = 500;
                 multiplier = 0;
                 
@@ -135,7 +135,7 @@ namespace cse210_04.Game.Casting;
                 g = 0;
                 b = 0;
                 color = new Color(r, g, b);
-                fallingspeed = new Point(0, 5);
+                fallingspeed = new Point(0, 3);
                 score = 1000;
                 multiplier = 0;
                 
@@ -162,7 +162,7 @@ namespace cse210_04.Game.Casting;
                 g = 255;
                 b = 100;
                 color = new Color(r, g, b);
-                fallingspeed = new Point(0, 10);
+                fallingspeed = new Point(0, 5);
                 score = 100;
                 multiplier = 1;
             break;
@@ -172,7 +172,7 @@ namespace cse210_04.Game.Casting;
         }
         private void createobject(Cast cast)
         {
-                int FONT_SIZE = 3;
+                int FONT_SIZE = 15;
 
                 FallingObject fallingObject = new FallingObject(); // <-- INSTANCE OF FALLING OBJECT
                 fallingObject.SetText(image); // <-- DEPENDING ON THE OBJECT

@@ -19,7 +19,7 @@ namespace cse210_04
         private static int MAX_X = 900;
         private static int MAX_Y = 600;
         private static int CELL_SIZE = 15;
-        private static int FONT_SIZE = 3;
+        private static int FONT_SIZE = 15;
         private static int COLS = 60;
         private static int ROWS = 40;
         private static string CAPTION = "Greed";
@@ -44,7 +44,7 @@ namespace cse210_04
 
             // create the score banner
             Actor scoreBanner = new Actor();
-            scoreBanner.SetText("");
+            scoreBanner.SetText("Score: 0");
             scoreBanner.SetFontSize(FONT_SIZE);
             scoreBanner.SetColor(WHITE);
             scoreBanner.SetPosition(new Point(CELL_SIZE,0));
@@ -52,18 +52,18 @@ namespace cse210_04
 
             // create the multiplier banner
             Actor multiplierBanner = new Actor();
-            multiplierBanner.SetText("");
+            multiplierBanner.SetText("Multiplier: 1x");
             multiplierBanner.SetFontSize(FONT_SIZE);
             multiplierBanner.SetColor(WHITE);
-            multiplierBanner.SetPosition(new Point(MAX_X - CELL_SIZE, 0));
+            multiplierBanner.SetPosition(new Point(MAX_X - (15*CELL_SIZE), 0));
             cast.AddActor("multiplier banner", multiplierBanner);
 
             // create the minecart
             Actor minecart = new Actor();
-            minecart.SetText("|__|"); // <-- SHAPE OF THE MAIN CHARACTER
+            minecart.SetText("Q"); // <-- SHAPE OF THE MAIN CHARACTER
             minecart.SetFontSize(FONT_SIZE);
             minecart.SetColor(WHITE);
-            minecart.SetPosition(new Point(MAX_X / 2, MAX_Y-10));
+            minecart.SetPosition(new Point(MAX_X / 2, MAX_Y-15));
             cast.AddActor("minecart", minecart); // <-- WHAT NAME ARE WE GIVING IT?
 
             // start the game

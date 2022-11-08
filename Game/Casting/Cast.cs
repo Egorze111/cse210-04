@@ -95,7 +95,8 @@ namespace cse210_04.Game.Casting
         {
             if (_actors.ContainsKey(group))
             {
-                _actors[group].Remove(actor);
+                bool Removed = _actors[group].Remove(actor);
+                actor = null;
             }
         }
 
