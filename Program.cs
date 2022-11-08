@@ -60,7 +60,7 @@ namespace cse210_04
 
             // create the minecart
             Actor minecart = new Actor();
-            minecart.SetText("Q"); // <-- SHAPE OF THE MAIN CHARACTER
+            minecart.SetText("U"); // <-- SHAPE OF THE MAIN CHARACTER
             minecart.SetFontSize(FONT_SIZE);
             minecart.SetColor(WHITE);
             minecart.SetPosition(new Point(MAX_X / 2, MAX_Y-15));
